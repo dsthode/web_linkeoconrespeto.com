@@ -92,6 +92,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
   // Default task(s).
   //grunt.registerTask('default', ['clean', 'sprite', 'uglify', 'sass', 'cssmin', 'imagemin', 'copy']);
-  grunt.registerTask('default', ['clean', 'uglify', 'sass', 'cssmin', 'processhtml', 'copy']);
+  grunt.registerTask('default', ['clean', 'uglify', 'sass', 'cssmin', 'processhtml']);
 
 };
