@@ -1,0 +1,25 @@
+{
+  "name": "web_linkeoconrespeto.com",
+  "version": "0.1.0",
+  "description": "Web de LinkeoConRespeto.com",
+  "author": "Damian Serrano Thode <mail@dsthode.info> (http://dsthode.info)",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/dsthode/web_linkeoconrespeto.com.git"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-spritesmith": "~1.21.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-imagemin": "~0.4.0",
+    "grunt-contrib-sass": "~0.7.2"
+  },
+  "dependencies": {
+    "grunt-processhtml": "~0.3.7"
+  }
+}
