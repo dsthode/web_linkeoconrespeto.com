@@ -1,5 +1,6 @@
 var opts = {
 	formato: '',
+	ancho: 220,
 	red: 0,
 	green: 0,
 	blue: 0
@@ -10,16 +11,16 @@ $(document).ready(function() {
 		color: "#000000",
 		flat: true
 	});
-	$('#format-picker').change(function(ev) {
-		opts.formato = $('#format-picker').value();
+	$('input[type=radio][name=formato]').click(function(ev) {
+		opts.formato = this.value;
 		updateBadgeCode();
 	});
 	$('#color-picker').change(function(ev) {
 		try {
 			var tmp = hexToRGB($('#color-picker').spectrum('get').toHexString());
-			opts.red = tmp.red;
-			opts.green = tmp.green;
-			opts.blue = tmp.blue;
+			opts.red = Math.round(tmp.red/10) * 10;
+			opts.green = Math.round(tmp.green/10) * 10;
+			opts.blue = Math.round(tmp.blue/10) * 10;
 			updateBadgeCode();
 		} catch (err) {}
 	});
@@ -40,5 +41,15 @@ function hexToRGB(hexValue) {
 };
 
 function updateBadgeCode() {
-	return '<a href="http://www.linkeoconrespeto.com" target="_blank"><img src="//cdn.linkeoconrespeto.com/logos/' + opts.formato + '/linkeo_con_respeto_' + opts.formato + '_' + opts.red + '_' + opts.green + '_' + opts.blue + '.png" width="220" height="' + (opts.formato == 'cuadrado' ? 220 : 62) + '" alt="Logo de Linkeo con Respeto"></a>';
+	if (opts.formato != null && opts.formato.length > 0) {
+		var imgSrc = '//cdn.linkeoconrespeto.com/logos/' + 
+			opts.formato + '/' + opts.ancho + '/linkeo_con_respeto_' + 
+			opts.formato + '_' + opts.red + '_' + 
+			opts.green + '_' + opts.blue + '.png';
+		var badgeCode = '<a href="http://www.linkeoconrespeto.com" target="_blank">' +
+			'<img src="' + imgSrc + '" width="220" height="' + 
+			(opts.formato == 'cuadrado' ? 220 : 62) + '" alt="Logo de Linkeo con Respeto"></a>';
+		$('#badge-code').val(badgeCode);
+		$('#logo-color-pick').attr('src', imgSrc);
+	}
 };
