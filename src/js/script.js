@@ -40,5 +40,5 @@ function hexToRGB(hexValue) {
 };
 
 function updateBadgeCode() {
-	return '<a href="http://www.linkeoconrespeto.com" target="_blank"><img src="//cdn.linkeoconrespeto.com/logos/linkeo_con_respeto_' + opts.formato + '_' + opts.red + '_' + opts.green + '_' + opts.blue + '.png" width="220" height="' + (opts.formato == 'cuadrado' ? 220 : 62) + '" alt="Logo de Linkeo con Respeto"></a>';
+	return '<a href="http://www.linkeoconrespeto.com" target="_blank"><img src="//cdn.linkeoconrespeto.com/logos/' + opts.formato + '/linkeo_con_respeto_' + opts.formato + '_' + opts.red + '_' + opts.green + '_' + opts.blue + '.png" width="220" height="' + (opts.formato == 'cuadrado' ? 220 : 62) + '" alt="Logo de Linkeo con Respeto"></a>';
 };
