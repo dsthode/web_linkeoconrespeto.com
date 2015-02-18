@@ -54,7 +54,7 @@ function hexToRGB(hexValue) {
 
 function updateBadgeCode() {
 	if (opts.formato != null && opts.formato.length > 0) {
-		var imgSrc = '//cdn.linkeoconrespeto.com/logos/' + 
+		var imgSrc = 'http://cdn.linkeoconrespeto.com/logos/' + 
 			opts.formato + '/' + opts.ancho + '/linkeo_con_respeto_' + 
 			opts.formato + '_' + opts.red + '_' + 
 			opts.green + '_' + opts.blue + '.png';
